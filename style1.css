@@ -140,7 +140,7 @@ nav{
     .hero{transform: scale(0.6);}
     .details p{font-size: 120%;}
     .pages{
-        transform: translateY(-60%);
+        transform: translateY(-80%);
         right: 2%;
     }
     .pages h3{
@@ -162,7 +162,7 @@ nav{
         margin-bottom: 50px;
     }
     .pages{
-        transform: translate(-160%,-200%) rotateZ(270deg);
+        transform: translate(-160%,-220%) rotateZ(270deg);
     }
     .pages h3{transform: rotateZ(90deg);}
     .pages svg{
