@@ -1,0 +1,213 @@
+/* BASIC SETUP*/
+
+*,*::before,*::after{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
+    text-rendering: optimizeLegibility;
+}
+
+
+
+/*___________ LIZA MORELL _______________*/
+.banner{
+    height: 50vh;
+    width: 100%;
+    position: relative;
+    background-color: #000000;
+}
+.banner img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.7;
+}
+.author{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+}
+.author h1{
+    font-size: 150%;
+    text-transform: uppercase;
+}
+.author h3{
+    font-size: 100%;
+    text-transform: uppercase;
+    padding: 20px 7px;    
+}
+.my-story{
+    min-height: 50vh;
+    display: grid;
+    grid-template-columns: 5% 1fr 1fr 5%;
+    background: radial-gradient(rgba(43,55,96,1), rgba(11,16,35,1));  
+}
+.story-description, .work-description{
+    grid-column: 2/3;
+    margin-top: 60px;
+    color: whitesmoke;
+}
+.story-description h2,p, .work-description h2,p{
+    padding-bottom: 30px;
+    color:aliceblue;
+    text-align:center;
+    
+}
+.story-description h2, .work-description h2{
+    font-family: 'Yesteryear', cursive;
+    font-size: 250%;
+    font-weight: lighter;
+    text-decoration: underline;
+}
+.profile-photo{
+    grid-column: 3/3;
+    justify-self: center;
+    align-items: center;
+    align-self: center;    
+}
+.profile-photo img{
+    height: 50%;
+    width:100;
+    object-fit: cover;
+    margin-top: 45px;
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px black;
+}
+.profile-photo img:hover{
+    animation: expand 0.8s ease-in-out infinite alternate;    
+}
+
+@keyframes expand{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+}
+
+.my-work{
+    min-height: 50vh;
+    display: grid;
+    grid-template-columns: 5% 1fr 2fr 5%;
+    background: radial-gradient(rgba(43,55,96,1), rgba(11,16,35,1));
+}
+.gallery-photo{
+    margin-top:100px;
+    justify-self: center;
+    padding-left: 250px;
+    padding-right: 100px;  
+}
+.gallery-photo img{
+    animation: gallery 0.7s ease-in-out infinite alternate;
+}
+
+@keyframes gallery{
+    0%{
+        transform: scale(1.06);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 1350px){
+    .gallery-photo{
+        justify-self: center;
+        padding-left: 150px;
+    }
+}
+@media screen and (max-width: 1024px){
+    body{
+        font-size: 12px;
+    }
+    .profile-photo img{
+        transform: scale(0.9);
+    }
+    @keyframes expand{
+        0%{
+            transform: scale(0.8);
+        }
+        100%{
+            transform: scale(0.9);
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    body{
+        font-size: 10px;
+    }
+    .profile-photo img{
+        transform: scale(0.7);
+    }
+    .gallery-photo{
+        justify-self: center;
+        padding-left: 100px;
+        padding-right: 50px;
+    }
+    @keyframes expand{
+        0%{
+            transform: scale(0.6);
+        }
+        100%{
+            transform: scale(0.7);
+        }
+    }
+}
+@media screen and (max-width: 600px){
+    .gallery-photo{
+        margin-top:0px;
+        justify-self: right;
+        align-self: right !important;
+        padding-left: 0px;
+        padding-right: 0px; 
+        transform: scale(0.7);
+    }
+}
+@media screen and (max-width: 550px){
+    .my-story{
+        min-height: 50vh;
+        display: block;
+        
+        width: 100%;
+        padding: 0px 10px;
+        overflow: hidden;
+    }
+    .profile-photo{
+        display: block;
+        padding-left: 15%;
+        padding-top: -10%;
+    }
+    .story-description p, .work-description p{
+        font-size: 12px;
+    }
+    .story-description h2 .work-description h2{
+        font-size: 40px;
+    }
+    .my-work{
+        display: block;
+        overflow: hidden;
+        width: 100%;
+        padding: 0px 10px;
+        font-size: 12px;
+    }
+    .gallery-photo{
+        padding-left: 40px;
+    }
+
+}
+@media screen and (max-width: 440px){
+    .profile-photo{
+        display: block;
+        padding-left: 6%;
+        padding-top: -10%;
+    }
+}

@@ -1,0 +1,191 @@
+/* BASIC SETUP*/
+
+*,*::before,*::after{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: lighter;
+    text-rendering: optimizeLegibility;
+}
+
+/* PORTFOLIO*/
+
+.portfolio{
+    color: white;
+    background: radial-gradient(rgba(43,55,96,1), rgba(11,16,35,1));
+}
+
+nav{
+    min-height: 10vh;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between; /* Adds the space between two contents */
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.logo{font-size: 150%;
+    font-style: italic;
+}
+
+.page{
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 5% 1fr 1fr 1fr 5%; /* specifies the number of grids */
+}
+.hero{
+    height: 400px;
+    width: 400px;
+    margin-right: 0;
+    align-self: center;
+    justify-self: center;
+    overflow: hidden;
+    background-color: black;
+    box-shadow: 10px 10px 10px black;
+}
+
+.hero:hover::before{
+    content: attr(data-tooltip);
+}
+.hero img{
+    transform: scale(1.4);
+    opacity: 0.5;
+    box-shadow: inset 3px 3px 10px 0 #000000;
+}
+.hero img:hover{
+    cursor: pointer;
+    
+    animation: hero 0.8s ease-in-out infinite alternate;
+}
+@keyframes hero{
+    0%{
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.4);
+        opacity: 0.5;
+    }
+}
+
+.details{
+    grid-column: 2/3;
+    align-self: end;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.details h1{
+    font-size: 250%;
+    font-family:'Yesteryear', cursive;
+}
+.details h2{
+    font-size: 150%;
+    padding: 20px 0px;
+}
+.pages{
+    overflow: hidden;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+.pages > div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.pages h3{
+    font-size: 110%;
+    padding: 30px;
+}
+.pages svg{
+    cursor: pointer;
+    opacity: 0.5;
+}
+.pages svg.active{
+    opacity: 1;
+}
+.pages svg:hover{
+    animation: dot 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes dot{
+    0%{
+        transform: scale(0.7);
+    }
+    100%{
+        transform: scale(1.2);
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    body{font-size: 12px;}
+    .details{text-align: left;}
+}
+@media screen and (max-width: 1024px) {
+    .hero{transform: scale(0.8);}
+}
+@media screen and (max-width: 768px){
+    body{font-size: 10px;}
+}
+@media screen and (max-width: 640px){
+    body{font-size: 8px;}
+    .hero{transform: scale(0.6);}
+    .details p{font-size: 120%;}
+    .pages{
+        transform: translateY(-60%);
+        right: 2%;
+    }
+    .pages h3{
+        padding: 15px;
+    }
+    .page{min-height:50vh}
+}
+@media screen and (max-width: 600px){
+    .page{
+        min-height: 90vh;
+        display: grid;
+        grid-template-columns: 5% 1fr 1fr 5%; /* specifies the number of grids */
+    }
+    .hero{
+        margin-right: 300px;
+    }
+    .page{min-height:50vh}
+    header{
+        margin-bottom: 50px;
+    }
+    .pages{
+        transform: translate(-160%,-200%) rotateZ(270deg);
+    }
+    .pages h3{transform: rotateZ(90deg);}
+    .pages svg{
+        height: 20;
+        width: 20;
+    }
+    .hero{justify-self: left !important;
+        justify-content: left;
+    }
+    
+}
+@media screen and (max-width: 550px){
+    
+    .page{min-height:50vh}
+    .hero img{
+        transform: translateX(-200);
+    }
+}
+@media screen and (max-width: 480px){
+    .hero{
+        transform: scale(0.6);
+    }
+    body{
+        overflow: hidden;
+    }
+}
